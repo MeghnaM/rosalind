@@ -10,13 +10,11 @@ def fib_rabbits(n, k):
       return fib_rabbits(n-1, k) + 3*(fib_rabbits(n-2, k))
 
 if __name__ == '__main__':
-#   f = open('rosalind_rabbits.txt', 'r')
-#   s = f.readline()
-#   f.close()
-   #n, k = s.split(' ')
+   f = open('rosalind_fib.txt', 'r')
+   s = f.readline()
+   f.close()
+   n, k = s.split(' ')
 
-   n = 5
-   k = 3
-   print fib_rabbits(n, k)
+   print fib_rabbits(int(n), int(k))
 
 # Dynamic Programming Fibonacci
