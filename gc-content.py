@@ -17,4 +17,3 @@ if __name__ == '__main__':
    # TODO Truncate floating point number to be 6 decimal places (without rounding)
    print gc_content(dna)
 
-# Experiment: Try to write the output of running a python command to a file (using bash), and get that file to upload its answer automatically to rosalind (may need to see if this is even possible - for instance, if I have multiple rosalind tabs open, which tab will the output be uploaded to?)
