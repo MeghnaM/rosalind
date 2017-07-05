@@ -11,12 +11,18 @@ def gc_content(dna):
 
 if __name__ == '__main__':
    gc_max = 0
+   str_id = ''
 
    # TODO Read lines from file, calculate GC content for all dna strings,
    # then print the id of the one which won, and its GC content in the next line
-   with open('rosalind_gc.txt','r') as file_obj:
-      for line in file_obj:
-         if line[0] is '<':
+   with open('rosalind_gc.txt','r') as f:
+      while True:
+         line = f.readline()
+         if line[0] == '<':
+            str_id = line
+         dna = f.readline()
+         if not dna: break
+         gc_max = gc_content(dna)
 
    # TODO Experiment: Try to write this output to a file
    dna = 'CCACCCTCGTGGTATGGCTAGGCATTCAGGAACCGGAGAACGCTTCAGACCAGCCCGGACTGGGAACCTGCGGGCAGTAGGTGGAAT'
