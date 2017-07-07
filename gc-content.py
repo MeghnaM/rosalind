@@ -9,23 +9,37 @@ def gc_content(dna):
    dna_total = gc_total + float(dna.count('A') + dna.count('T'))
    return (gc_total/dna_total) * 100
 
+def parseFileContentsAndCalculateGCmax(string):
+   string_id = ''
+   dna = ''
+   for x in string:
+      if x == '>':
+         string_id = string_id + x
+
 if __name__ == '__main__':
    gc_max = 0
    str_id = ''
+   dna = ''
 
    # TODO Read lines from file, calculate GC content for all dna strings,
    # then print the id of the one which won, and its GC content in the next line
-   with open('rosalind_gc.txt','r') as f:
+   with open('rosalind_gc_test.txt','r') as f:
       while True:
          line = f.readline()
-         if line[0] == '<':
+         if line and (line[0] == '>'):
             str_id = line
-         dna = f.readline()
-         if not dna: break
-         gc_max = gc_content(dna)
+            print "str_id", str_id
+         line2 = f.readline()
+         if not line2: break
+         #if line2[0] != '<':
+         dna = dna + line2.strip()
+         #elif line2[0] == '<': break
+         #gc_max = gc_content(dna)
+      print "dna", dna
 
+   print gc_max
    # TODO Experiment: Try to write this output to a file
-   dna = 'CCACCCTCGTGGTATGGCTAGGCATTCAGGAACCGGAGAACGCTTCAGACCAGCCCGGACTGGGAACCTGCGGGCAGTAGGTGGAAT'
+   #dna = 'CCACCCTCGTGGTATGGCTAGGCATTCAGGAACCGGAGAACGCTTCAGACCAGCCCGGACTGGGAACCTGCGGGCAGTAGGTGGAAT'
    # TODO Truncate floating point number to be 6 decimal places (without rounding)
-   print gc_content(dna)
+   #print gc_content(dna)
 
