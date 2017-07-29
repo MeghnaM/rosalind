@@ -1,3 +1,3 @@
 # rosalind
 
-My solutions to the problems on [rosalind.info](rosalind.info/problems/locations/).
+My solutions to the problems on [rosalind.info](http://rosalind.info/problems/locations/).
